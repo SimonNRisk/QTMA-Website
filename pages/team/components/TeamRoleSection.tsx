@@ -15,7 +15,7 @@ export function TeamRoleSection({ role, members }: Props) {
 			<h2 className="text-4xl text-qtmaPrimaryDark font-light text-center mb-4">
 				{role + (role.endsWith("s") ? "" : "s")}
 			</h2>
-			<div className="student-photos">
+			<div className="flex flex-wrap justify-center gap-8">
 				{members.map((member, i) => (
 					<TeamMemberCard key={i} {...member} />
 				))}
