@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"types": ["node", "webpack-env"],
 		/* Visit https://aka.ms/tsconfig to read more about this file */
 		/* Projects */
 		// "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
@@ -101,9 +102,8 @@
 		// "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
 		/* Completeness */
 		// "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-		"skipLibCheck": true
-		/* Skip type checking all .d.ts files. */,
-		"lib": [
+		"skipLibCheck": true,
+		/* Skip type checking all .d.ts files. */ "lib": [
 			"dom",
 			"dom.iterable",
 			"esnext"
@@ -116,12 +116,6 @@
 		"isolatedModules": true,
 		"jsx": "preserve"
 	},
-	"include": [
-		"pages/**/*",
-		"components/**/*"
-	],
-	"exclude": [
-		"node_modules",
-		".next"
-	]
+	"include": ["pages/**/*", "components/**/*"],
+	"exclude": ["node_modules", ".next"]
 }
