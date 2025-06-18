@@ -12,7 +12,7 @@ type Props = {
 export function TeamRoleSection({ role, members }: Props) {
 	return (
 		<div className="mb-10">
-			<h2 className="position-name">
+			<h2 className="text-4xl text-qtmaPrimaryDark font-light text-center mb-4">
 				{role + (role.endsWith("s") ? "" : "s")}
 			</h2>
 			<div className="student-photos">
