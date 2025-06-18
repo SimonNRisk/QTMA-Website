@@ -7,7 +7,7 @@ $navHeightSm: 70px;
 }
 
 h1 {
-	@media only screen and(max-width: 340px) {
+	@media only screen and (max-width: 340px) {
 		font-size: 1.7rem;
 	}
 }
@@ -30,19 +30,19 @@ html {
 .container {
 	max-width: 1340px;
 	margin: auto;
-	@media only screen and(max-width: 1400px) {
+	@media only screen and (max-width: 1400px) {
 		max-width: 1100px;
 	}
-	@media only screen and(max-width: 1100px) {
+	@media only screen and (max-width: 1100px) {
 		max-width: 1000px;
 	}
-	@media only screen and(max-width: 900px) {
+	@media only screen and (max-width: 900px) {
 		max-width: 900px;
 	}
-	@media only screen and(max-width: 650px) {
+	@media only screen and (max-width: 650px) {
 		max-width: 620px;
 	}
-	@media only screen and(max-width: 428px) {
+	@media only screen and (max-width: 428px) {
 		max-width: 400px;
 	}
 }
@@ -52,7 +52,7 @@ html {
 	padding: 5rem 1.5rem 0 1.5rem;
 	text-align: center;
 	font-size: 3rem;
-	@media only screen and(max-width: 1300px) {
+	@media only screen and (max-width: 1300px) {
 		padding-top: 1rem;
 	}
 }
@@ -62,16 +62,16 @@ html {
 	position: relative;
 }
 
-@media only screen and(max-width: 1300px) {
+@media only screen and (max-width: 1300px) {
 }
 
-@media only screen and(max-width: 1100px) {
+@media only screen and (max-width: 1100px) {
 }
 
-@media only screen and(max-width: 650px) {
+@media only screen and (max-width: 650px) {
 }
 
-@media only screen and(max-width: 340px) {
+@media only screen and (max-width: 340px) {
 }
 
 @import "nav";
