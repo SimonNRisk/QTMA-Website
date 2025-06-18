@@ -1,14 +1,21 @@
+import { SparkIcon } from "../public/assets/icons/SparkIcon.jsx";
+
 type LinkBoxProps = {
 	message: string;
 	link: string;
+	icon?: React.ReactNode;
 };
 
-export function LinkBox({ message, link }: LinkBoxProps) {
+export function LinkBox({ message, link, icon = <SparkIcon /> }: LinkBoxProps) {
 	return (
-		<div className="bg-white border border-gray-200 p-4 rounded-lg shadow-md">
-			<a href={link} target="_blank">
-				{message}
-			</a>
-		</div>
+		<a
+			href={link}
+			target="_blank"
+			rel="noopener noreferrer"
+			className="bg-white border-4 border-gray-400 p-4 rounded-full shadow-md inline-flex items-center gap-2 no-underline hover:bg-gray-50 transition"
+		>
+			<span className="shrink-0">{icon}</span>
+			<span>{message}</span>
+		</a>
 	);
 }
