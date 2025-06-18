@@ -12,7 +12,7 @@ export function LinkBox({ message, link, icon = <SparkIcon /> }: LinkBoxProps) {
 			href={link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="bg-white border-4 border-gray-400 p-4 rounded-full shadow-md inline-flex items-center gap-2 no-underline hover:bg-gray-50 transition"
+			className="text-gray-500 bg-white border-4 border-gray-400 p-4 rounded-full shadow-md inline-flex items-center gap-2 no-underline hover:bg-gray-50 transition"
 		>
 			<span className="shrink-0">{icon}</span>
 			<span>{message}</span>
