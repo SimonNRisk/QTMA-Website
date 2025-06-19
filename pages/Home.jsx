@@ -5,6 +5,8 @@ import Layout from "../components/layout";
 import { Link as SLink } from "react-scroll";
 import React, { useEffect, useState } from "react";
 import { FancyAmpersand } from "../components/icons/FancyAmpersand";
+import { Banner } from "../components/Banner";
+import { LinkBox } from "../components/LinkBox";
 
 function getWindowDimensions() {
 	if (typeof window !== "undefined") {
@@ -68,6 +70,17 @@ export default function Home() {
 						QUEEN'S TECHNOLOGY AND MEDIA ASSOCIATION
 					</h1>
 				</div>
+				<Banner
+					title="hi"
+					message="hello"
+					linkBox={
+						<LinkBox
+							message="Apply Now"
+							link="https://forms.gle/3b1d7Z5x6f8a2g4i9"
+							hasIcon
+						/>
+					}
+				/>
 			</section>
 		</Layout>
 	);
