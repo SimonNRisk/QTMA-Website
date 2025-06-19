@@ -71,11 +71,22 @@ export default function Home() {
 					</h1>
 				</div>
 				<Banner
-					title="hi"
-					message="hello"
+					title="Launch the next big thing."
+					message="Designers. Developers. Analysts. Building at Canada’s premier product incubation club."
 					linkBox={
 						<LinkBox
-							message="Apply Now"
+							message="VIEW OUR PRODUCTS"
+							link="https://forms.gle/3b1d7Z5x6f8a2g4i9"
+							hasIcon
+						/>
+					}
+				/>
+				<Banner
+					title="Meet the next generation of leaders and innovators."
+					message="Teams consist of highly motivated and vision-oriented students across all faculties."
+					linkBox={
+						<LinkBox
+							message="MEETING OUR TEAM"
 							link="https://forms.gle/3b1d7Z5x6f8a2g4i9"
 							hasIcon
 						/>
