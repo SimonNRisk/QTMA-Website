@@ -9,27 +9,34 @@ type Props = {
 };
 
 export function TeamMemberCard({ name, image, subPosition, linkedIn }: Props) {
+	console.log(linkedIn);
 	return (
-		<div className="student-container text-center">
-			<Image
-				alt={`Photo of ${name}`}
-				src={image}
-				className="student-image"
-				width={500}
-				height={500}
-			/>
-			<p className="student-name">{name}</p>
-			{subPosition && <p className="special-role">{subPosition}</p>}
-			{linkedIn && (
+		<div className="text-center">
+			{linkedIn ? (
 				<a
-					className="linkedIn"
+					href={linkedIn}
 					target="_blank"
 					rel="noreferrer"
-					href={linkedIn}
+					className=""
 				>
-					<AiFillLinkedin />
+					<Image
+						alt={`Photo of ${name}`}
+						src={image}
+						className="rounded-full border-4 border-gray-400 shadow-md aspect-square object-cover"
+						width={400}
+						height={400}
+					/>
 				</a>
+			) : (
+				<Image
+					alt={`Photo of ${name}`}
+					src={image}
+					className="rounded-full border-4 border-gray-400 shadow-md aspect-square object-cover"
+					width={400}
+					height={400}
+				/>
 			)}
+			<p className="">{name}</p>
 		</div>
 	);
 }

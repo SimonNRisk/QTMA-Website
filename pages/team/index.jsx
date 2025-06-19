@@ -17,27 +17,22 @@ const Team = () => {
 
 			<Nav />
 
-			<Layout background={"#edf5fc"}>
-				<div className="history-container container">
-					<h1 className="section-title">2023/2024 Team</h1>
+			<div className="mx-auto w-full max-w-[2400px] px-12 sm:px-16 lg:px-20">
+				{Positions.map((role) => {
+					const members = ClubMembers.filter(
+						(m) => m.position === role
+					);
+					if (members.length === 0) return null;
 
-					{Positions.map((role) => {
-						const members = ClubMembers.filter(
-							(m) => m.position === role
-						);
-						if (members.length === 0) return null;
-
-						return (
-							<TeamRoleSection
-								key={role}
-								role={role}
-								members={members}
-							/>
-						);
-					})}
-				</div>
-			</Layout>
-
+					return (
+						<TeamRoleSection
+							key={role}
+							role={role}
+							members={members}
+						/>
+					);
+				})}
+			</div>
 			<Footer />
 		</>
 	);
