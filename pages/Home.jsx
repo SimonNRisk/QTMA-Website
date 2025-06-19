@@ -66,7 +66,7 @@ export default function Home() {
 			{/* FOREGROUND CONTENT */}
 			<section className="-mt-32 sm:-mt-40 relative z-10 pb-32">
 				<div className="flex items-center justify-center">
-					<h1 className="text-center text-gray-400 text-3xl">
+					<h1 className="text-center text-gray-400 text-3xl mb-4">
 						QUEEN'S TECHNOLOGY AND MEDIA ASSOCIATION
 					</h1>
 				</div>
@@ -81,8 +81,9 @@ export default function Home() {
 						/>
 					}
 					images={[
-						"/assets/2025/Home/qtma-on-3.jpg",
-						"/assets/2025/Home/thinking.jpg",
+						"/assets/2025/Home/curious-mahir.jpg",
+						"/assets/2025/Home/happy-alison.png",
+						"/assets/2025/Home/happy-nathan.jpg",
 					]}
 				/>
 				<Banner
@@ -96,9 +97,8 @@ export default function Home() {
 						/>
 					}
 					images={[
-						"/assets/2025/Home/curious-mahir.jpg",
-						"/assets/2025/Home/happy-alison.png",
-						"/assets/2025/Home/happy-nathan.jpg",
+						"/assets/2025/Home/qtma-on-3.jpg",
+						"/assets/2025/Home/thinking.jpg",
 					]}
 				/>
 			</section>
