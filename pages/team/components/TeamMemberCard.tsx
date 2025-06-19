@@ -23,8 +23,8 @@ export function TeamMemberCard({ name, image, subPosition, linkedIn }: Props) {
 						alt={`Photo of ${name}`}
 						src={image}
 						className="rounded-full border-4 border-gray-400 shadow-md aspect-square object-cover"
-						width={400}
-						height={400}
+						width={200}
+						height={200}
 					/>
 				</a>
 			) : (
@@ -32,8 +32,8 @@ export function TeamMemberCard({ name, image, subPosition, linkedIn }: Props) {
 					alt={`Photo of ${name}`}
 					src={image}
 					className="rounded-full border-4 border-gray-400 shadow-md aspect-square object-cover"
-					width={400}
-					height={400}
+					width={200}
+					height={200}
 				/>
 			)}
 			<p className="">{name}</p>
