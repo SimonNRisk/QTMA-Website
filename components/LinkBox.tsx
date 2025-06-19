@@ -1,4 +1,4 @@
-import { SparkIcon } from "../public/assets/icons/SparkIcon.jsx";
+import { SparkIcon } from "../public/assets/icons/SparkIcon";
 
 const sizeMap = {
 	small: "sm",
@@ -30,6 +30,7 @@ export function LinkBox({
 	size = "medium",
 }: LinkBoxProps) {
 	const twSize = paddingBySize[sizeMap[size]];
+	const defaultIcon = <SparkIcon />;
 
 	return (
 		<a
@@ -38,7 +39,7 @@ export function LinkBox({
 			rel="noopener noreferrer"
 			className={`text-qtmaPrimaryDark bg-white border-2 border-qtmaPrimaryDark rounded-full shadow-md inline-flex items-center gap-2 no-underline hover:bg-gray-100 hover:cursor-pointer transition ${twSize}`}
 		>
-			{hasIcon && <span className="shrink-0">{icon}</span>}
+			{hasIcon && <span className="shrink-0">{icon ?? defaultIcon}</span>}
 			<span>{message}</span>
 		</a>
 	);
