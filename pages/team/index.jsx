@@ -5,6 +5,7 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import { ClubMembers, Positions } from "../../data/TeamData.js";
 import { TeamRoleSection } from "./components/TeamRoleSection";
+import { LinkBox } from "../../components/LinkBox";
 
 const Team = () => {
 	return (
@@ -17,7 +18,15 @@ const Team = () => {
 
 			<Nav />
 
-			<div className="mx-auto w-full max-w-[2400px] px-12 sm:px-16 lg:px-20">
+			<div className="mx-auto w-full max-w-[2400px] px-12 sm:px-16 lg:px-20 mt-60">
+				<h1>Meet the Team</h1>
+				<div className="flex">
+					<LinkBox message="Product Managers" />
+					<LinkBox message="Developers" />
+					<LinkBox message="Business Analysts" />
+					<LinkBox message="UIUX Designers" />
+				</div>
+
 				{Positions.map((role) => {
 					const members = ClubMembers.filter(
 						(m) => m.position === role
