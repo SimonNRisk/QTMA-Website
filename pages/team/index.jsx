@@ -5,7 +5,7 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import { ClubMembers, Positions } from "../../data/TeamData.js";
 import { TeamRoleSection } from "../components/TeamRoleSection";
-import { LinkBox } from "../../components/LinkBox";
+import { LinkBox } from "../../components/TeamRoleSection.tsx";
 
 const Team = () => {
 	return (
