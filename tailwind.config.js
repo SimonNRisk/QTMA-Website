@@ -13,6 +13,9 @@ module.exports = {
 			fontFamily: {
 				sans: ["Inter", "sans-serif"],
 			},
+			padding: {
+				0.5: "1px",
+			},
 		},
 	},
 };

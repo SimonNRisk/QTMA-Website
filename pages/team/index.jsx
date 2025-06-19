@@ -19,8 +19,10 @@ const Team = () => {
 			<Nav />
 
 			<div className="mx-auto w-full max-w-[2400px] px-12 sm:px-16 lg:px-20 mt-60">
-				<h1>Meet the Team</h1>
-				<div className="flex justify-center gap-20 mb-8">
+				<h1 className="text-qtmaPrimaryDark text-center text-4xl font-semibold mb-8">
+					Meet the Team
+				</h1>
+				<div className="flex justify-center gap-20 mb-20">
 					<LinkBox message="Product Managers" />
 					<LinkBox message="Developers" />
 					<LinkBox message="Business Analysts" />
