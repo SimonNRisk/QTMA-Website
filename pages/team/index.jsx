@@ -20,7 +20,7 @@ const Team = () => {
 
 			<div className="mx-auto w-full max-w-[2400px] px-12 sm:px-16 lg:px-20 mt-60">
 				<h1>Meet the Team</h1>
-				<div className="flex">
+				<div className="flex justify-center gap-20 mb-8">
 					<LinkBox message="Product Managers" />
 					<LinkBox message="Developers" />
 					<LinkBox message="Business Analysts" />

@@ -4,9 +4,15 @@ type LinkBoxProps = {
 	message: string;
 	link: string;
 	icon?: React.ReactNode;
+	hasIcon?: boolean;
 };
 
-export function LinkBox({ message, link, icon = <SparkIcon /> }: LinkBoxProps) {
+export function LinkBox({
+	message,
+	link,
+	icon = <SparkIcon />,
+	hasIcon = false,
+}: LinkBoxProps) {
 	return (
 		<a
 			href={link}
@@ -14,7 +20,7 @@ export function LinkBox({ message, link, icon = <SparkIcon /> }: LinkBoxProps) {
 			rel="noopener noreferrer"
 			className="text-gray-500 bg-white border-4 border-gray-400 p-4 rounded-full shadow-md inline-flex items-center gap-2 no-underline hover:bg-gray-50 transition"
 		>
-			<span className="shrink-0">{icon}</span>
+			{hasIcon && <span className="shrink-0">{icon}</span>}
 			<span>{message}</span>
 		</a>
 	);
