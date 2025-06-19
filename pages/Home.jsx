@@ -51,18 +51,22 @@ export default function Home() {
 
 	return (
 		<Layout home={true}>
+			{/* BACKGROUND SECTION */}
 			<section
 				id="home"
-				className="relative h-screen w-full overflow-hidden bg-black"
+				className="relative h-screen w-full overflow-hidden bg-white"
 			>
-				{/* BIG BACKGROUND SVG */}
-				<div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+				<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 					<FancyAmpersand className="w-[200%] h-[200%] opacity-10 scale-150" />
 				</div>
+			</section>
 
-				{/* FOREGROUND CONTENT */}
-				<div className="relative z-10 flex items-center justify-center h-full">
-					<h1 className="text-white text-6xl">Welcome to QTMA</h1>
+			{/* FOREGROUND CONTENT */}
+			<section className="-mt-32 sm:-mt-40 relative z-10 pb-32">
+				<div className="flex items-center justify-center">
+					<h1 className="text-center text-gray-400 text-3xl">
+						QUEEN'S TECHNOLOGY AND MEDIA ASSOCIATION
+					</h1>
 				</div>
 			</section>
 		</Layout>
