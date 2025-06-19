@@ -4,6 +4,7 @@ import startup from "../public/assets/Visuals/Startup_SVG.png";
 import Layout from "../components/layout";
 import { Link as SLink } from "react-scroll";
 import React, { useEffect, useState } from "react";
+import { FancyAmpersand } from "../components/icons/FancyAmpersand";
 
 function getWindowDimensions() {
 	if (typeof window !== "undefined") {
@@ -50,8 +51,19 @@ export default function Home() {
 
 	return (
 		<Layout home={true}>
-			<section id="home">
-				<div></div>
+			<section
+				id="home"
+				className="relative h-screen w-full overflow-hidden bg-black"
+			>
+				{/* BIG BACKGROUND SVG */}
+				<div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+					<FancyAmpersand className="w-[200%] h-[200%] opacity-10 scale-150" />
+				</div>
+
+				{/* FOREGROUND CONTENT */}
+				<div className="relative z-10 flex items-center justify-center h-full">
+					<h1 className="text-white text-6xl">Welcome to QTMA</h1>
+				</div>
 			</section>
 		</Layout>
 	);
