@@ -80,6 +80,10 @@ export default function Home() {
 							hasIcon
 						/>
 					}
+					images={[
+						"/assets/2025/Home/qtma-on-3.jpg",
+						"/assets/2025/Home/thinking.jpg",
+					]}
 				/>
 				<Banner
 					title="Meet the next generation of leaders and innovators."
@@ -91,6 +95,11 @@ export default function Home() {
 							hasIcon
 						/>
 					}
+					images={[
+						"/assets/2025/Home/curious-mahir.jpg",
+						"/assets/2025/Home/happy-alison.png",
+						"/assets/2025/Home/happy-nathan.jpg",
+					]}
 				/>
 			</section>
 		</Layout>
