@@ -1,4 +1,5 @@
 import qtmaLogo from "../public/assets/Club Data/QTMA_logo.png";
+
 import Image from "next/image";
 import Layout from "../components/layout";
 import Link from "next/link";
@@ -75,6 +76,7 @@ export default function Nav() {
 							/>
 						</Link>
 					</div>
+
 					<div
 						className="links-container"
 						style={{
@@ -92,17 +94,8 @@ export default function Nav() {
 						<Link className="nav-link" href="/products">
 							Products
 						</Link>
-						<Link className="nav-link" href="/history">
-							History
-						</Link>
 						<Link className="nav-link" href="/team">
 							Team
-						</Link>
-						<Link className="nav-link" href="/placements">
-							Placements
-						</Link>
-						<Link className="nav-link" href="/contact">
-							Contact
 						</Link>
 					</div>
 				</div>
