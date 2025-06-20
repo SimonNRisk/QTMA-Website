@@ -76,7 +76,7 @@ export default function Home() {
 					linkBox={
 						<LinkBox
 							message="VIEW OUR PRODUCTS"
-							link="https://forms.gle/3b1d7Z5x6f8a2g4i9"
+							link="products"
 							hasIcon
 						/>
 					}
@@ -90,11 +90,7 @@ export default function Home() {
 					title="Meet the next generation of leaders and innovators."
 					message="Teams consist of highly motivated and vision-oriented students across all faculties."
 					linkBox={
-						<LinkBox
-							message="MEETING OUR TEAM"
-							link="https://forms.gle/3b1d7Z5x6f8a2g4i9"
-							hasIcon
-						/>
+						<LinkBox message="MEET OUR TEAM" link="team" hasIcon />
 					}
 					images={[
 						"/assets/2025/Home/qtma-on-3.jpg",
