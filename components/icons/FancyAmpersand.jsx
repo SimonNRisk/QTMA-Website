@@ -23,14 +23,14 @@ export function FancyAmpersand() {
 				<path
 					d="M140.384 274.778C149.347 279.604 152.703 290.783 147.877 299.746C143.065 308.686 131.939 312.04 122.992 307.284L122.69 307.124L122.685 307.133C110.33 300.776 95.1201 305.503 88.5739 317.807L88.5183 317.91L88.229 318.433C82.0249 329.289 68.2622 333.273 57.1889 327.312C45.9397 321.256 41.7318 307.231 47.7879 295.982C53.8441 284.733 67.8678 280.525 79.1169 286.581C79.7786 286.937 80.411 287.322 81.0257 287.73L81.0252 287.731C92.7002 295.554 108.51 292.428 116.333 280.754L116.334 280.753C121.55 272.945 131.951 270.238 140.384 274.778Z"
 					stroke="#2A61D5"
-					stroke-width="0.688577"
+					strokeWidth="0.688577"
 				/>
 			</g>
 			<g filter="url(#filter3_f_57_4989)">
 				<path
 					d="M114.421 319.959C125.019 319.959 133.611 328.55 133.611 339.149C133.611 349.748 125.019 358.339 114.421 358.34C103.822 358.34 95.2305 349.748 95.2304 339.149C95.2304 328.55 103.822 319.959 114.421 319.959Z"
 					stroke="#2A61D5"
-					stroke-width="0.688577"
+					strokeWidth="0.688577"
 				/>
 			</g>
 			<g filter="url(#filter4_f_57_4989)">
@@ -43,7 +43,7 @@ export function FancyAmpersand() {
 				<path
 					d="M100.604 19.9048C117.668 13.0925 134.511 10.9624 151.127 13.5249H151.126C167.628 15.9927 182.247 22.6159 194.977 33.3901C211.374 47.2687 222.164 63.3895 227.325 81.7524C232.478 100.085 234.291 120.655 232.771 143.458L230.259 183.903L382.949 186.389C380.886 181.455 378.543 176.541 375.916 171.653L375.915 171.651C366.245 153.372 352.251 136.477 333.926 120.966L333.663 120.744L333.885 120.481L366.084 82.437L366.307 82.1743L366.569 82.397C389.279 101.618 405.62 119.938 415.571 137.359C425.507 154.751 431.771 170.193 434.346 183.679C434.577 184.889 434.798 186.076 435.014 187.237L532.803 188.83L533.529 188.842L533.06 189.397L492.952 236.784L492.848 236.908L492.686 236.906L443.584 236.406C445.464 256.089 442.698 275.982 435.291 296.081V296.083C427.069 317.997 416.024 337.148 402.156 353.533C383.111 376.034 362.572 391.944 340.534 401.243C318.503 410.539 296.556 413.508 274.7 410.14C252.844 406.772 232.66 397.249 214.151 381.583C199.875 369.5 189.754 355.765 183.802 340.376V340.375C177.841 324.801 174.653 307.654 174.235 288.938C173.843 271.851 174.569 253.447 176.409 233.728C170.731 233.675 165.215 233.626 159.86 233.575C139.763 233.384 121.522 231.33 105.14 227.41C88.7319 223.484 73.8323 215.852 60.4443 204.521C45.0538 191.495 34.4258 176.661 28.5771 160.018V160.017C22.713 143.173 21.7877 125.812 25.7998 107.944L26.1895 106.25C30.3684 88.7792 39.3206 71.9445 53.0303 55.7466C67.5581 38.582 83.415 26.6281 100.604 19.9048ZM225.876 254.466V254.468C224.231 279.397 226.442 299.058 232.479 313.477C235.508 320.714 238.36 326.627 241.034 331.22C243.711 335.818 246.199 339.073 248.49 341.012C259.121 350.01 271.372 355.629 285.251 357.872C299.128 360.114 313.158 358.587 327.347 353.286C341.523 347.989 354.34 338.582 365.795 325.048C376.684 312.183 384.575 297.35 389.468 280.545C393.497 266.307 395.093 251.427 394.256 235.903L227.134 234.202L225.876 254.466ZM160.639 73.9604C152.047 66.6885 140.495 63.4309 125.939 64.23H125.938C111.522 64.9161 99.1202 71.383 88.7236 83.6665C81.4202 92.2955 77.1794 101.792 75.9883 112.159V112.16C74.7782 122.34 75.9554 132.164 79.5195 141.636C83.0675 150.906 88.3785 158.529 95.4502 164.514C103.41 171.251 113.313 175.933 125.17 178.551C137.033 180.97 150.11 182.412 164.4 182.875H164.399C169.492 182.968 174.636 183.053 179.833 183.136L182.124 146.951L182.125 146.94L182.126 146.93C183.973 131.913 183.729 118.477 181.403 106.616V106.613C179.181 94.6934 172.274 83.8082 160.639 73.9604Z"
 					stroke="#2A61D5"
-					stroke-width="0.688577"
+					strokeWidth="0.688577"
 				/>
 			</g>
 			<rect
@@ -63,7 +63,7 @@ export function FancyAmpersand() {
 				<path
 					d="M301.491 18.3291C301.854 27.1404 302.304 34.3876 303.134 40.3545C304.239 48.3029 306.023 54.03 309.215 58.1758L309.405 58.4219L309.67 58.2578C313.008 56.1835 316.776 53.0312 321.438 48.8057C317.178 53.5054 314.009 57.296 311.936 60.6543L311.78 60.9062L312.006 61.0977C316.085 64.5556 321.8 66.4778 329.846 67.6572C335.943 68.5509 343.409 69.0214 352.563 69.3975C343.411 69.7752 335.946 70.2458 329.849 71.1387C322.007 72.287 316.378 74.1394 312.32 77.4336L311.884 76.7256V78.7002L312.153 78.4707C314.22 81.7372 317.308 85.4201 321.412 89.9473C316.763 85.7334 313.002 82.589 309.67 80.5186L309.405 80.3545L309.215 80.6016C306.023 84.7474 304.239 90.4745 303.134 98.4229C302.304 104.389 301.853 111.634 301.491 120.442C301.117 111.377 300.652 103.967 299.775 97.9033C298.615 89.8805 296.73 84.1616 293.343 80.0664L293.157 79.8428L292.905 79.9873C289.363 82.0258 285.36 85.3447 280.311 89.9238C284.85 84.9193 288.153 80.9421 290.197 77.4268L290.352 77.1631L290.107 76.9785C285.946 73.8493 280.216 72.0957 272.291 71.0068C266.363 70.1924 259.179 69.7463 250.465 69.3877C259.179 69.0291 266.363 68.584 272.291 67.7695C280.216 66.6807 285.946 64.9271 290.107 61.7979L290.352 61.6133L290.197 61.3486C288.145 57.8298 284.84 53.848 280.295 48.8359C285.352 53.421 289.359 56.7426 292.905 58.7891L293.157 58.9346L293.343 58.71C296.73 54.6148 298.615 48.8958 299.775 40.873C300.652 34.808 301.117 27.3964 301.491 18.3291Z"
 					stroke="#6086D6"
-					stroke-width="0.688577"
+					strokeWidth="0.688577"
 				/>
 			</g>
 			<defs>
@@ -74,9 +74,9 @@ export function FancyAmpersand() {
 					width="117.753"
 					height="70.1955"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
@@ -95,9 +95,9 @@ export function FancyAmpersand() {
 					width="47.3328"
 					height="47.3328"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
@@ -116,9 +116,9 @@ export function FancyAmpersand() {
 					width="114.016"
 					height="66.4585"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
@@ -137,9 +137,9 @@ export function FancyAmpersand() {
 					width="47.3328"
 					height="47.3328"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
@@ -158,9 +158,9 @@ export function FancyAmpersand() {
 					width="525.098"
 					height="414.319"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
@@ -179,9 +179,9 @@ export function FancyAmpersand() {
 					width="522.269"
 					height="410.713"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
@@ -211,9 +211,9 @@ export function FancyAmpersand() {
 					width="129.048"
 					height="129.039"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
@@ -232,9 +232,9 @@ export function FancyAmpersand() {
 					width="129.048"
 					height="129.039"
 					filterUnits="userSpaceOnUse"
-					color-interpolation-filters="sRGB"
+					colorInterpolationFilters="sRGB"
 				>
-					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feFlood floodOpacity="0" result="BackgroundImageFix" />
 					<feBlend
 						mode="normal"
 						in="SourceGraphic"
