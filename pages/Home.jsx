@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import { FancyAmpersand } from "../components/icons/FancyAmpersand";
 import { Banner } from "../components/Banner";
 import { LinkBox } from "../components/LinkBox";
+import Nav from "./Nav.jsx";
 
 function getWindowDimensions() {
 	if (typeof window !== "undefined") {
@@ -53,6 +54,11 @@ export default function Home() {
 
 	return (
 		<Layout home={true}>
+			{/* NAVBAR */}
+			<section>
+				<Nav/>
+			</section>
+
 			{/* BACKGROUND SECTION */}
 			<section
 				id="home"

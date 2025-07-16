@@ -1,4 +1,3 @@
-import qtmaLogo from "../public/assets/Club Data/QTMA_logo.png";
 import Image from "next/image";
 import Layout from "../components/layout";
 import Link from "next/link";
@@ -31,7 +30,6 @@ export function useWindowDimensions() {
 		}
 
 		window.addEventListener("resize", handleResize);
-
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
@@ -41,72 +39,53 @@ export function useWindowDimensions() {
 export default function Nav() {
 	const router = useRouter();
 	const [navOn, setNavOn] = useState(false);
-	const { height, width } = useWindowDimensions();
+	const { width } = useWindowDimensions();
 	const [isTablet, setIsTablet] = useState(false);
 
 	useEffect(() => {
-		if (width <= 1100) {
-			setIsTablet(true);
-		} else {
-			setIsTablet(false);
-		}
+		setIsTablet(width <= 1100);
 	}, [width]);
 
 	return (
 		<>
-			<Layout background="#222831" isNav={true}>
-				<div className="nav-container container">
+			{/* Transparent fixed top navbar */}
+			<div className="fixed top-0 left-0 w-full z-[9999] bg-transparent">
+				<div className="nav-container container mx-auto px-8 py-4 flex items-center">
+					{/* Hamburger icon */}
 					<div
-						className="nav-toggle-container"
-						onClick={() => {
-							setNavOn(!navOn);
-						}}
+						className="nav-toggle-container cursor-pointer block sm:hidden"
+						onClick={() => setNavOn(!navOn)}
 					>
-						<AiOutlineMenu />
+						<AiOutlineMenu size={28} />
 					</div>
-					<div className="logo-container">
-						<Link passHref href="/" legacyBehavior>
-							<Image
-								alt="QTMA logo"
-								src={qtmaLogo}
-								className="nav-logo"
-								height={41.71}
-								width={154}
-							/>
-						</Link>
-					</div>
+
+					{/* Spacer */}
+					<div className="flex-1" />
+
+					{/* Nav Links */}
 					<div
-						className="links-container"
-						style={{
-							transform:
-								navOn && isTablet
-									? "translateX(0)"
-									: isTablet
-									? "translateX(100%)"
-									: "translateX(0)",
-						}}
+						className={`links-container ${
+							isTablet
+								? `fixed top-0 right-0 h-full w-2/3 bg-white z-[10000] p-8 transition-transform duration-300 ${
+										navOn ? "translate-x-0" : "translate-x-full"
+								  }`
+								: "flex"
+						}`}
 					>
-						<Link className="nav-link" href="/">
-							Home
-						</Link>
-						<Link className="nav-link" href="/products">
-							Products
-						</Link>
-						<Link className="nav-link" href="/history">
-							History
-						</Link>
-						<Link className="nav-link" href="/team">
-							Team
-						</Link>
-						<Link className="nav-link" href="/placements">
-							Placements
-						</Link>
-						<Link className="nav-link" href="/contact">
-							Contact
-						</Link>
+						<div className="linksTogether flex flex-col sm:flex-row items-start sm:items-center gap-8 text-blue-600 text-xl sm:text-base ml-auto pr-12">
+							<Link className="nav-link" href="/">Home</Link>
+							<Link className="nav-link" href="/products">Products</Link>
+							<Link className="nav-link" href="/history">History</Link>
+							<Link className="nav-link" href="/team">Team</Link>
+							<Link className="nav-link" href="/placements">Placements</Link>
+							<Link className="nav-link" href="/contact">Contact</Link>
+						</div>
 					</div>
 				</div>
-			</Layout>
+			</div>
+
+			{/* Spacer div to push content below fixed navbar */}
+			<div className="h-20" />
 		</>
 	);
 }
