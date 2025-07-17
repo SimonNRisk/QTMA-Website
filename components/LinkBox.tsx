@@ -9,9 +9,9 @@ const sizeMap = {
 type Size = keyof typeof sizeMap;
 
 const paddingBySize: Record<"sm" | "md" | "lg", string> = {
-	sm: "p-2 text-sm",
-	md: "p-4 text-base",
-	lg: "p-6 text-lg",
+	sm: "px-4 py-2 text-sm",
+	md: "px-6 py-3 text-base",
+	lg: "px-8 py-4 text-lg",
 };
 
 type LinkBoxProps = {
@@ -37,10 +37,10 @@ export function LinkBox({
 	return (
 		<a
 			href={link}
-			className={`text-qtmaPrimaryDark bg-white border-2 border-qtmaPrimaryDark rounded-full shadow-md inline-flex items-center gap-2 no-underline hover:bg-gray-100 hover:cursor-pointer transition ${twSize} ${className}`}
+			className={`text-gray-800 bg-transparent border-2 border-gray-800 rounded-full shadow-sm inline-flex items-center gap-3 no-underline hover:bg-gray-50 hover:cursor-pointer transition-all duration-300 ease-in-out ${twSize} ${className}`}
 		>
 			{hasIcon && <span className="shrink-0">{icon ?? defaultIcon}</span>}
-			<span>{message}</span>
+			<span className="uppercase tracking-wide">{message}</span>
 		</a>
 	);
 }

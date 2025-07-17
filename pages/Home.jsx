@@ -130,7 +130,7 @@ export default function Home() {
 			</section>
 
 			{/* FOREGROUND CONTENT */}
-			<section className="-mt-32 sm:-mt-40 relative z-10 pb-32">
+			<section className="-mt-32 sm:-mt-40 relative z-10">
 				{/* Main Title with Parallax */}
 				<div 
 					className="flex items-center justify-center"
@@ -138,7 +138,7 @@ export default function Home() {
 						transform: `translateY(${scrollY * -0.2}px)`
 					}}
 				>
-					<h1 className="text-center text-gray-400 text-3xl mb-4 animate-fade-in">
+					<h1 className="text-center text-blue-400 text-3xl mb-4 animate-fade-in">
 						QUEEN'S TECHNOLOGY AND MEDIA ASSOCIATION
 					</h1>
 				</div>
@@ -175,44 +175,21 @@ export default function Home() {
 				/>
 				{/* Parallax Stats Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
+					className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-16 mb-32 overflow-hidden"
 					style={{
-						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 0.8) * 0.05)}px)`
+						background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
+						boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
 					}}
 				>
-					{/* Floating Elements */}
-					<div className="absolute inset-0 overflow-hidden">
-						<div 
-							className="absolute w-32 h-32 bg-blue-200 opacity-20 rounded-full blur-xl"
-							style={{
-								transform: `translateY(${scrollY * -0.1}px) translateX(${mousePosition.x * 0.02}px)`,
-								top: '20%',
-								left: '10%'
-							}}
-						/>
-						<div 
-							className="absolute w-24 h-24 bg-blue-200 opacity-25 rounded-full blur-lg"
-							style={{
-								transform: `translateY(${scrollY * -0.15}px) translateX(${mousePosition.x * -0.02}px)`,
-								top: '70%',
-								right: '20%'
-							}}
-						/>
-					</div>
-					
+					{/* Soft blurred glows */}
+					<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
+					<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
 					{/* Stats Content */}
 					<div className="max-w-6xl mx-auto relative z-10">
-						<div 
-							className="text-center mb-8"
-						>
-							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
-								Innovation by the Numbers
-							</h2>
-							<p className="text-gray-400 text-lg sm:text-xl mb-6">
-								See the impact we're making at Queen's University
-							</p>
+						<div className="text-center mb-8">
+							<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Innovation by the Numbers</h2>
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">See the impact we're making at Queen's University</p>
 						</div>
-						
 						<div className="grid md:grid-cols-4 gap-8">
 							{[
 								{ number: "150+", label: "Active Members" },
@@ -223,11 +200,8 @@ export default function Home() {
 								<div 
 									key={index}
 									className="text-center"
-									style={{
-										animationDelay: `${index * 100}ms`
-									}}
 								>
-									<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+									<div className="text-3xl md:text-4xl font-bold text-[#3576d3] mb-2">
 										{stat.number}
 									</div>
 									<div className="text-gray-400 text-lg">{stat.label}</div>
@@ -239,32 +213,19 @@ export default function Home() {
 
 				{/* Feature Cards Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
+					className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-32 mb-16 overflow-hidden"
 					style={{
-						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 1.8) * 0.05)}px)`
+						background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
+						boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
 					}}
 				>
-					{/* Background Pattern */}
-					<div 
-						className="absolute inset-0 opacity-5 overflow-hidden"
-						style={{
-							transform: `translateY(${scrollY * -0.1}px)`,
-							backgroundImage: 'radial-gradient(circle, #3B82F6 1px, transparent 1px)',
-							backgroundSize: '30px 30px'
-						}}
-					/>
-					
+					<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
+					<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
 					<div className="max-w-6xl mx-auto relative z-10">
 						<div className="text-left max-w-[600px] mb-8">
-							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
-								Why Choose QTMA?
-							</h2>
-							<p className="text-gray-400 text-lg sm:text-xl mb-6">
-								We're more than just a club - we're a community of innovators, creators, and future leaders.
-							</p>
+							<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Why Choose QTMA?</h2>
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">We're more than just a club - we're a community of innovators, creators, and future leaders.</p>
 						</div>
-
-						{/* Feature Cards */}
 						<div className="grid md:grid-cols-3 gap-8">
 							{[
 								{
@@ -285,13 +246,10 @@ export default function Home() {
 							].map((feature, index) => (
 								<div 
 									key={index}
-									className="bg-white rounded-xl p-6 border-2 border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-									style={{
-										animationDelay: `${index * 100}ms`
-									}}
+									className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
 								>
-									<div className="text-3xl mb-3 text-blue-600">{feature.icon}</div>
-									<h3 className="text-xl font-bold text-blue-600 mb-3">{feature.title}</h3>
+									<div className="text-3xl mb-3 text-[#3576d3]">{feature.icon}</div>
+									<h3 className="text-xl font-bold text-[#3576d3] mb-3">{feature.title}</h3>
 									<p className="text-gray-400">{feature.desc}</p>
 								</div>
 							))}
@@ -324,23 +282,20 @@ export default function Home() {
 
 				{/* Timeline Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
+					className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-16 mb-32 overflow-hidden"
 					style={{
-						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 2.5) * 0.05)}px)`
+						background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
+						boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
 					}}
 				>
+					<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
+					<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
 					<div className="max-w-6xl mx-auto relative z-10">
 						<div className="text-left max-w-[600px] mb-8">
-							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
-								Our Journey
-							</h2>
-							<p className="text-gray-400 text-lg sm:text-xl mb-6">
-								From concept to creation, witness the evolution of innovation
-							</p>
+							<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Our Journey</h2>
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">From concept to creation, witness the evolution of innovation</p>
 						</div>
-
-						{/* Timeline Items */}
-						<div className="relative pl-8 border-l-2 border-blue-300">
+						<div className="relative pl-8 border-l-2 border-[#b3cfff]">
 							{[
 								{ year: "2020", title: "Foundation", desc: "QTMA was born with a vision to bridge tech and business" },
 								{ year: "2022", title: "First Products", desc: "Launched our first student-built applications" },
@@ -352,11 +307,11 @@ export default function Home() {
 									className="mb-10 relative"
 								>
 									{/* Timeline Dot */}
-									<div className="absolute -left-[25px] w-4 h-4 bg-blue-600 rounded-full border-4 border-blue-100"></div>
+									<div className="absolute -left-[25px] w-4 h-4 bg-[#3576d3] rounded-full border-4 border-[#e3edfa]"></div>
 									
-									<div className="bg-white rounded-xl p-6 border-2 border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-										<div className="text-2xl font-bold text-blue-600 mb-2">{item.year}</div>
-										<h3 className="text-xl font-bold text-blue-600 mb-2">{item.title}</h3>
+									<div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+										<div className="text-2xl font-bold text-[#3576d3] mb-2">{item.year}</div>
+										<h3 className="text-xl font-bold text-[#3576d3] mb-2">{item.title}</h3>
 										<p className="text-gray-400">{item.desc}</p>
 									</div>
 								</div>
@@ -367,39 +322,18 @@ export default function Home() {
 
 				{/* Final CTA Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
+					className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-32 mb-16 overflow-hidden"
 					style={{
-						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 3.2) * 0.05)}px)`
+						background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
+						boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
 					}}
 				>
-					{/* Floating Elements */}
-					<div className="absolute inset-0 overflow-hidden">
-						<div 
-							className="absolute w-32 h-32 bg-blue-200 opacity-20 rounded-full blur-xl"
-							style={{
-								transform: `translateY(${scrollY * -0.1}px) translateX(${mousePosition.x * 0.02}px)`,
-								top: '20%',
-								left: '10%'
-							}}
-						/>
-						<div 
-							className="absolute w-24 h-24 bg-blue-200 opacity-25 rounded-full blur-lg"
-							style={{
-								transform: `translateY(${scrollY * -0.15}px) translateX(${mousePosition.x * -0.02}px)`,
-								top: '70%',
-								right: '20%'
-							}}
-						/>
-					</div>
-
+					<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
+					<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
 					<div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
 						<div className="text-left max-w-[600px]">
-							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
-								Ready to Build the Future?
-							</h2>
-							<p className="text-gray-400 text-lg sm:text-xl mb-6">
-								Join QTMA today and be part of Queen's most innovative student organization.
-							</p>
+							<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Ready to Build the Future?</h2>
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">Join QTMA today and be part of Queen's most innovative student organization.</p>
 							<div className="flex flex-col sm:flex-row gap-4">
 								<LinkBox
 									message="JOIN OUR COMMUNITY"
@@ -416,9 +350,9 @@ export default function Home() {
 						
 						{/* Decorative Image */}
 						<div className="relative w-[280px] h-[280px] hidden md:block">
-							<div className="absolute top-0 right-10 w-40 h-40 bg-blue-600 opacity-20 rounded-lg"></div>
-							<div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-600 opacity-15 rounded-lg"></div>
-							<div className="absolute bottom-0 right-40 w-48 h-48 bg-blue-600 opacity-25 rounded-lg"></div>
+							<div className="absolute top-0 right-10 w-40 h-40 bg-[#b3cfff] opacity-20 rounded-lg blur-2xl"></div>
+							<div className="absolute bottom-0 right-0 w-32 h-32 bg-[#d1cfff] opacity-15 rounded-lg blur-2xl"></div>
+							<div className="absolute bottom-0 right-40 w-48 h-48 bg-[#e3edfa] opacity-25 rounded-lg blur-2xl"></div>
 						</div>
 					</div>
 				</div>
