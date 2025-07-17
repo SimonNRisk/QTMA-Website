@@ -178,17 +178,17 @@ export default function Home() {
 						"/assets/2025/Home/thinking.jpg",
 					]}
 				/>
-				{/* Parallax Stats Section */}
+				{/* Parallax Stats Section - Styled like Banner */}
 				<div 
-					className="relative py-32 my-16 overflow-hidden"
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
 					style={{
-						background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+						transform: `translateY(${Math.max(0, (scrollY - height * 0.8) * 0.05)}px)`
 					}}
 				>
 					{/* Floating Elements */}
-					<div className="absolute inset-0">
+					<div className="absolute inset-0 overflow-hidden">
 						<div 
-							className="absolute w-32 h-32 bg-white opacity-10 rounded-full blur-xl"
+							className="absolute w-32 h-32 bg-blue-200 opacity-20 rounded-full blur-xl"
 							style={{
 								transform: `translateY(${scrollY * -0.1}px) translateX(${mousePosition.x * 0.02}px)`,
 								top: '20%',
@@ -196,7 +196,7 @@ export default function Home() {
 							}}
 						/>
 						<div 
-							className="absolute w-24 h-24 bg-white opacity-15 rounded-full blur-lg"
+							className="absolute w-24 h-24 bg-blue-200 opacity-25 rounded-full blur-lg"
 							style={{
 								transform: `translateY(${scrollY * -0.15}px) translateX(${mousePosition.x * -0.02}px)`,
 								top: '70%',
@@ -206,17 +206,14 @@ export default function Home() {
 					</div>
 					
 					{/* Stats Content */}
-					<div className="container mx-auto px-4 relative z-10">
+					<div className="max-w-6xl mx-auto relative z-10">
 						<div 
-							className="text-center mb-12"
-							style={{
-								transform: `translateY(${Math.max(0, (scrollY - height * 0.8) * 0.2)}px)`
-							}}
+							className="text-center mb-8"
 						>
-							<h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
 								Innovation by the Numbers
 							</h2>
-							<p className="text-xl text-blue-100">
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">
 								See the impact we're making at Queen's University
 							</p>
 						</div>
@@ -232,25 +229,29 @@ export default function Home() {
 									key={index}
 									className="text-center"
 									style={{
-										transform: `translateY(${Math.max(0, (scrollY - height * 0.9) * 0.1)}px)`,
 										animationDelay: `${index * 100}ms`
 									}}
 								>
-									<div className="text-4xl md:text-5xl font-bold text-white mb-2 animate-pulse">
+									<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
 										{stat.number}
 									</div>
-									<div className="text-blue-200 text-lg">{stat.label}</div>
+									<div className="text-gray-400 text-lg">{stat.label}</div>
 								</div>
 							))}
 						</div>
 					</div>
 				</div>
 
-				{/* Feature Cards Section */}
-				<div className="py-20 bg-gray-50 my-16 relative overflow-hidden">
+				{/* Feature Cards Section - Styled like Banner */}
+				<div 
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
+					style={{
+						transform: `translateY(${Math.max(0, (scrollY - height * 1.8) * 0.05)}px)`
+					}}
+				>
 					{/* Background Pattern */}
 					<div 
-						className="absolute inset-0 opacity-5"
+						className="absolute inset-0 opacity-5 overflow-hidden"
 						style={{
 							transform: `translateY(${scrollY * -0.1}px)`,
 							backgroundImage: 'radial-gradient(circle, #3B82F6 1px, transparent 1px)',
@@ -258,17 +259,12 @@ export default function Home() {
 						}}
 					/>
 					
-					<div className="container mx-auto px-4 relative z-10">
-						<div 
-							className="text-center mb-16"
-							style={{
-								transform: `translateY(${Math.max(0, (scrollY - height * 1.8) * 0.2)}px)`
-							}}
-						>
-							<h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+					<div className="max-w-6xl mx-auto relative z-10">
+						<div className="text-left max-w-[600px] mb-8">
+							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
 								Why Choose QTMA?
 							</h2>
-							<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">
 								We're more than just a club - we're a community of innovators, creators, and future leaders.
 							</p>
 						</div>
@@ -294,15 +290,14 @@ export default function Home() {
 							].map((feature, index) => (
 								<div 
 									key={index}
-									className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+									className="bg-white rounded-xl p-6 border-2 border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
 									style={{
-										transform: `translateY(${Math.max(0, (scrollY - height * 1.9) * 0.1)}px)`,
 										animationDelay: `${index * 100}ms`
 									}}
 								>
-									<div className="text-4xl mb-4">{feature.icon}</div>
-									<h3 className="text-2xl font-bold text-gray-800 mb-4">{feature.title}</h3>
-									<p className="text-gray-600">{feature.desc}</p>
+									<div className="text-3xl mb-3 text-blue-600">{feature.icon}</div>
+									<h3 className="text-xl font-bold text-blue-600 mb-3">{feature.title}</h3>
+									<p className="text-gray-400">{feature.desc}</p>
 								</div>
 							))}
 						</div>
@@ -332,28 +327,25 @@ export default function Home() {
 					/>
 				</div>
 
-				{/* Timeline Section */}
-				<div className="relative py-20 bg-black my-16 overflow-hidden">
-					<div className="container mx-auto px-4 relative z-10">
-						<div 
-							className="text-center mb-16"
-							style={{
-								transform: `translateY(${Math.max(0, (scrollY - height * 2.5) * 0.3)}px)`
-							}}
-						>
-							<h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-								Our <span className="text-purple-400">Journey</span>
+				{/* Timeline Section - Styled like Banner */}
+				<div 
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
+					style={{
+						transform: `translateY(${Math.max(0, (scrollY - height * 2.5) * 0.05)}px)`
+					}}
+				>
+					<div className="max-w-6xl mx-auto relative z-10">
+						<div className="text-left max-w-[600px] mb-8">
+							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
+								Our Journey
 							</h2>
-							<p className="text-xl text-gray-300 max-w-3xl mx-auto">
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">
 								From concept to creation, witness the evolution of innovation
 							</p>
 						</div>
 
 						{/* Timeline Items */}
-						<div className="relative">
-							{/* Timeline Line */}
-							<div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500"></div>
-							
+						<div className="relative pl-8 border-l-2 border-blue-300">
 							{[
 								{ year: "2020", title: "Foundation", desc: "QTMA was born with a vision to bridge tech and business" },
 								{ year: "2022", title: "First Products", desc: "Launched our first student-built applications" },
@@ -362,67 +354,58 @@ export default function Home() {
 							].map((item, index) => (
 								<div 
 									key={index}
-									className={`relative flex items-center mb-16 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-									style={{
-										transform: `translateY(${Math.max(0, (scrollY - height * (2.6 + index * 0.1)) * 0.2)}px)`
-									}}
+									className="mb-10 relative"
 								>
-									<div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-										<div className="bg-gray-800 rounded-2xl p-6 hover:bg-gray-700 transition-all duration-300 hover:scale-105 transform">
-											<div className="text-3xl font-bold text-blue-400 mb-2">{item.year}</div>
-											<h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-											<p className="text-gray-300">{item.desc}</p>
-										</div>
-									</div>
-									
 									{/* Timeline Dot */}
-									<div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-black"></div>
+									<div className="absolute -left-[25px] w-4 h-4 bg-blue-600 rounded-full border-4 border-blue-100"></div>
+									
+									<div className="bg-white rounded-xl p-6 border-2 border-blue-200 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+										<div className="text-2xl font-bold text-blue-600 mb-2">{item.year}</div>
+										<h3 className="text-xl font-bold text-blue-600 mb-2">{item.title}</h3>
+										<p className="text-gray-400">{item.desc}</p>
+									</div>
 								</div>
 							))}
 						</div>
 					</div>
 				</div>
 
-				{/* Final CTA Section */}
+				{/* Final CTA Section - Styled like Banner */}
 				<div 
-					className="relative py-20 my-16 overflow-hidden"
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
 					style={{
-						background: 'linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%)'
+						transform: `translateY(${Math.max(0, (scrollY - height * 3.2) * 0.05)}px)`
 					}}
 				>
-					{/* Parallax Background Elements */}
-					<div className="absolute inset-0">
+					{/* Floating Elements */}
+					<div className="absolute inset-0 overflow-hidden">
 						<div 
-							className="absolute w-40 h-40 bg-white opacity-5 rounded-full blur-2xl"
+							className="absolute w-32 h-32 bg-blue-200 opacity-20 rounded-full blur-xl"
 							style={{
-								transform: `translateY(${scrollY * 0.05}px) translateX(${mousePosition.x * 0.03}px)`,
-								top: '10%',
-								left: '20%'
+								transform: `translateY(${scrollY * -0.1}px) translateX(${mousePosition.x * 0.02}px)`,
+								top: '20%',
+								left: '10%'
 							}}
 						/>
 						<div 
-							className="absolute w-32 h-32 bg-white opacity-8 rounded-full blur-xl"
+							className="absolute w-24 h-24 bg-blue-200 opacity-25 rounded-full blur-lg"
 							style={{
-								transform: `translateY(${scrollY * -0.03}px) translateX(${mousePosition.x * -0.02}px)`,
-								bottom: '20%',
-								right: '15%'
+								transform: `translateY(${scrollY * -0.15}px) translateX(${mousePosition.x * -0.02}px)`,
+								top: '70%',
+								right: '20%'
 							}}
 						/>
 					</div>
 
-					<div className="container mx-auto px-4 text-center relative z-10">
-						<div 
-							style={{
-								transform: `translateY(${Math.max(0, (scrollY - height * 3.2) * 0.2)}px)`
-							}}
-						>
-							<h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+					<div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+						<div className="text-left max-w-[600px]">
+							<h2 className="text-blue-600 text-3xl sm:text-4xl mb-4">
 								Ready to Build the Future?
 							</h2>
-							<p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+							<p className="text-gray-400 text-lg sm:text-xl mb-6">
 								Join QTMA today and be part of Queen's most innovative student organization.
 							</p>
-							<div className="flex flex-col sm:flex-row gap-4 justify-center">
+							<div className="flex flex-col sm:flex-row gap-4">
 								<LinkBox
 									message="JOIN OUR COMMUNITY"
 									link="/contact"
@@ -434,6 +417,13 @@ export default function Home() {
 									hasIcon
 								/>
 							</div>
+						</div>
+						
+						{/* Decorative Image */}
+						<div className="relative w-[280px] h-[280px] hidden md:block">
+							<div className="absolute top-0 right-10 w-40 h-40 bg-blue-600 opacity-20 rounded-lg"></div>
+							<div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-600 opacity-15 rounded-lg"></div>
+							<div className="absolute bottom-0 right-40 w-48 h-48 bg-blue-600 opacity-25 rounded-lg"></div>
 						</div>
 					</div>
 				</div>
