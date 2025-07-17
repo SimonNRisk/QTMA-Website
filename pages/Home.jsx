@@ -126,12 +126,7 @@ export default function Home() {
 					<FancyAmpersand className="w-[200%] h-[200%] opacity-10 scale-150" />
 				</div>
 
-				{/* Scroll Indicator */}
-				<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-					<div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-						<div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
-					</div>
-				</div>
+
 			</section>
 
 			{/* FOREGROUND CONTENT */}
@@ -180,9 +175,9 @@ export default function Home() {
 				/>
 				{/* Parallax Stats Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
 					style={{
-						transform: `translateY(${Math.max(0, (scrollY - height * 0.8) * 0.05)}px)`
+						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 0.8) * 0.05)}px)`
 					}}
 				>
 					{/* Floating Elements */}
@@ -244,9 +239,9 @@ export default function Home() {
 
 				{/* Feature Cards Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
 					style={{
-						transform: `translateY(${Math.max(0, (scrollY - height * 1.8) * 0.05)}px)`
+						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 1.8) * 0.05)}px)`
 					}}
 				>
 					{/* Background Pattern */}
@@ -329,9 +324,9 @@ export default function Home() {
 
 				{/* Timeline Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-16 mb-32 relative overflow-hidden"
 					style={{
-						transform: `translateY(${Math.max(0, (scrollY - height * 2.5) * 0.05)}px)`
+						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 2.5) * 0.05)}px)`
 					}}
 				>
 					<div className="max-w-6xl mx-auto relative z-10">
@@ -372,9 +367,9 @@ export default function Home() {
 
 				{/* Final CTA Section - Styled like Banner */}
 				<div 
-					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
+					className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-4 sm:mx-8 md:mx-16 sm:px-6 lg:px-8 mt-32 mb-16 relative overflow-hidden"
 					style={{
-						transform: `translateY(${Math.max(0, (scrollY - height * 3.2) * 0.05)}px)`
+						transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrollY - height * 3.2) * 0.05)}px)`
 					}}
 				>
 					{/* Floating Elements */}

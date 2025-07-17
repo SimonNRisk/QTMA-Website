@@ -142,7 +142,8 @@ const ClubMembers = [
 		"Co-Chair",
 		"egorpetrov1402"
 	),
-	generateMemberData(BigGuy, "Big Guy", "Co-Chair", "biggie"),
+	// LMFAOOOOO WHY DID IT ADD "BIG GUY HAHAHAHA"
+	generateMemberData(BigGuy, "temp", "Co-Chair", "biggie"),
 
 	// Club operations
 	generateMemberData(
