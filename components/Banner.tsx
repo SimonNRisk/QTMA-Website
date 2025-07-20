@@ -1,6 +1,8 @@
+'use client'
 import { LinkBox } from "./LinkBox";
 import Image from "next/image";
 import React from "react"; // Added missing import for React
+import { Parallax } from 'react-scroll-parallax';
 
 type BannerProps = {
 	title: string;
@@ -20,6 +22,12 @@ export function Banner({ title, message, linkBox, images = [] }: BannerProps) {
 				<div className="relative w-[420px] h-[320px] flex items-end justify-end">
 					{/* Main image */}
 					<div className="relative z-10">
+						<Parallax
+						scale={[1.4, 1.2]}
+						opacity={[0.6, 1]}
+						easing="easeOutCubic"
+						shouldAlwaysCompleteAnimation
+						>
 						<Image
 							src={images[0]}
 							alt="main"
@@ -28,17 +36,28 @@ export function Banner({ title, message, linkBox, images = [] }: BannerProps) {
 							className="rounded-xl shadow-xl border-8 border-white object-cover"
 							style={{ objectFit: 'cover' }}
 						/>
+						</Parallax>
+
+
 					</div>
 					{/* Overlapping small image */}
 					<div className="absolute left-0 bottom-0 z-20">
-						<Image
+						<Parallax
+						scale={[1.1, 1]}
+						opacity={[0.8, 1]}
+						easing="easeOutCubic"
+						shouldAlwaysCompleteAnimation
+						>
+							<Image
 							src={images[1]}
 							alt="overlap"
 							width={170}
 							height={120}
 							className="rounded-xl shadow-lg border-8 border-white object-cover"
 							style={{ objectFit: 'cover' }}
-						/>
+							/>
+						</Parallax>
+
 					</div>
 				</div>
 			);

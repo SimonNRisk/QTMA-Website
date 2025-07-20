@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import qtmaLogo from "../public/assets/Club Data/QTMA_logo.png";
 import startup from "../public/assets/Visuals/Startup_SVG.png";
@@ -8,6 +10,7 @@ import { FancyAmpersand } from "../components/icons/FancyAmpersand";
 import { Banner } from "../components/Banner";
 import { LinkBox } from "../components/LinkBox";
 import Nav from "./Nav.jsx";
+import { Parallax } from 'react-scroll-parallax';
 
 function getWindowDimensions() {
 	if (typeof window !== "undefined") {
@@ -55,12 +58,13 @@ export default function Home() {
 		}
 	}, [width]);
 
+	// TODO will prob delete this -> not pretty 
 	// Parallax scroll effect
-	useEffect(() => {
-		const handleScroll = () => setScrollY(window.scrollY);
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	// useEffect(() => {
+	// 	const handleScroll = () => setScrollY(window.scrollY);
+	// 	window.addEventListener('scroll', handleScroll);
+	// 	return () => window.removeEventListener('scroll', handleScroll);
+	// }, []);
 
 	// Mouse tracking for interactive effects
 	useEffect(() => {
@@ -81,7 +85,6 @@ export default function Home() {
 				<Nav/>
 			</section>
 
-			{/* BACKGROUND SECTION - Enhanced with Parallax */}
 			<section
 				id="home"
 				className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50"
@@ -122,8 +125,12 @@ export default function Home() {
 					style={{
 						transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0003}) rotate(${scrollY * 0.02}deg)`
 					}}
-				>
-					<FancyAmpersand className="w-[200%] h-[200%] opacity-10 scale-150" />
+				>	
+					{/* wow this library is goated */}
+					<Parallax scale={[1, 0.5]}>
+						<FancyAmpersand className="w-[200%] h-[200%] opacity-10 scale-150" />
+					</Parallax>
+						
 				</div>
 
 
@@ -142,7 +149,8 @@ export default function Home() {
 						QUEEN'S TECHNOLOGY AND MEDIA ASSOCIATION
 					</h1>
 				</div>
-				<Banner
+				<Parallax speed={10}>
+					<Banner
 					title="Launch the next big thing."
 					message="Designers. Developers. Analysts. Building at Canada’s premier product incubation club."
 					linkBox={
@@ -158,6 +166,8 @@ export default function Home() {
 						"/assets/2025/Home/happy-nathan.jpg",
 					]}
 				/>
+				</Parallax >
+				
 				<Banner
 					title="Meet the next generation of leaders and innovators."
 					message="Teams consist of highly motivated and vision-oriented students across all faculties."
@@ -173,89 +183,94 @@ export default function Home() {
 						"/assets/2025/Home/thinking.jpg",
 					]}
 				/>
-				{/* Parallax Stats Section - Styled like Banner */}
-				<div 
-					className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-16 mb-32 overflow-hidden"
-					style={{
-						background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
-						boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
-					}}
-				>
-					{/* Soft blurred glows */}
-					<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
-					<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
-					{/* Stats Content */}
-					<div className="max-w-6xl mx-auto relative z-10">
-						<div className="text-center mb-8">
-							<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Innovation by the Numbers</h2>
-							<p className="text-gray-400 text-lg sm:text-xl mb-6">See the impact we're making at Queen's University</p>
-						</div>
-						<div className="grid md:grid-cols-4 gap-8">
-							{[
-								{ number: "150+", label: "Active Members" },
-								{ number: "50+", label: "Products Built" },
-								{ number: "25+", label: "Industry Partners" },
-								{ number: "5", label: "Years Strong" }
-							].map((stat, index) => (
-								<div 
-									key={index}
-									className="text-center"
-								>
-									<div className="text-3xl md:text-4xl font-bold text-[#3576d3] mb-2">
-										{stat.number}
+				<Parallax speed={10}>
+					{/* Parallax Stats Section - Styled like Banner */}
+					<div 
+						className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-16 mb-32 overflow-hidden"
+						style={{
+							background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
+							boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
+						}}
+					>
+						{/* Soft blurred glows */}
+						<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
+						<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
+						{/* Stats Content */}
+						<div className="max-w-6xl mx-auto relative z-10">
+							<div className="text-center mb-8">
+								<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Innovation by the Numbers</h2>
+								<p className="text-gray-400 text-lg sm:text-xl mb-6">See the impact we're making at Queen's University</p>
+							</div>
+							<div className="grid md:grid-cols-4 gap-8">
+								{[
+									{ number: "150+", label: "Active Members" },
+									{ number: "50+", label: "Products Built" },
+									{ number: "25+", label: "Industry Partners" },
+									{ number: "5", label: "Years Strong" }
+								].map((stat, index) => (
+									<div 
+										key={index}
+										className="text-center"
+									>
+										<div className="text-3xl md:text-4xl font-bold text-[#3576d3] mb-2">
+											{stat.number}
+										</div>
+										<div className="text-gray-400 text-lg">{stat.label}</div>
 									</div>
-									<div className="text-gray-400 text-lg">{stat.label}</div>
-								</div>
-							))}
+								))}
+							</div>
 						</div>
 					</div>
-				</div>
+				</Parallax>
 
-				{/* Feature Cards Section - Styled like Banner */}
-				<div 
-					className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-32 mb-16 overflow-hidden"
-					style={{
-						background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
-						boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
-					}}
-				>
-					<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
-					<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
-					<div className="max-w-6xl mx-auto relative z-10">
-						<div className="text-left max-w-[600px] mb-8">
-							<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Why Choose QTMA?</h2>
-							<p className="text-gray-400 text-lg sm:text-xl mb-6">We're more than just a club - we're a community of innovators, creators, and future leaders.</p>
-						</div>
-						<div className="grid md:grid-cols-3 gap-8">
-							{[
-								{
-									title: "Real-World Experience",
-									desc: "Work on actual products that solve real problems for real users.",
-									icon: "🚀"
-								},
-								{
-									title: "Industry Mentorship",
-									desc: "Learn from professionals currently working at top tech companies.",
-									icon: "👥"
-								},
-								{
-									title: "Cross-Functional Teams",
-									desc: "Collaborate with students from business, engineering, and design.",
-									icon: "🎯"
-								}
-							].map((feature, index) => (
-								<div 
-									key={index}
-									className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-								>
-									<div className="text-3xl mb-3 text-[#3576d3]">{feature.icon}</div>
-									<h3 className="text-xl font-bold text-[#3576d3] mb-3">{feature.title}</h3>
-									<p className="text-gray-400">{feature.desc}</p>
-								</div>
-							))}
+				<Parallax speed={20}>
+
+					{/* Feature Cards Section - Styled like Banner */}
+					<div 
+						className="relative rounded-3xl py-16 px-4 sm:px-8 lg:px-16 mt-32 mb-16 overflow-hidden"
+						style={{
+							background: 'radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)',
+							boxShadow: '0 8px 32px 0 rgba(53, 118, 211, 0.08)'
+						}}
+					>
+						<div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-[#b3cfff] opacity-20 rounded-full blur-3xl z-0" />
+						<div className="absolute bottom-0 right-0 w-[220px] h-[180px] bg-[#d1cfff] opacity-10 rounded-full blur-2xl z-0" />
+						<div className="max-w-6xl mx-auto relative z-10">
+							<div className="text-left max-w-[600px] mb-8">
+								<h2 className="text-[#3576d3] text-3xl sm:text-4xl mb-4">Why Choose QTMA?</h2>
+								<p className="text-gray-400 text-lg sm:text-xl mb-6">We're more than just a club - we're a community of innovators, creators, and future leaders.</p>
+							</div>
+							<div className="grid md:grid-cols-3 gap-8">
+								{[
+									{
+										title: "Real-World Experience",
+										desc: "Work on actual products that solve real problems for real users.",
+										icon: "🚀"
+									},
+									{
+										title: "Industry Mentorship",
+										desc: "Learn from professionals currently working at top tech companies.",
+										icon: "👥"
+									},
+									{
+										title: "Cross-Functional Teams",
+										desc: "Collaborate with students from business, engineering, and design.",
+										icon: "🎯"
+									}
+								].map((feature, index) => (
+									<div 
+										key={index}
+										className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+									>
+										<div className="text-3xl mb-3 text-[#3576d3]">{feature.icon}</div>
+										<h3 className="text-xl font-bold text-[#3576d3] mb-3">{feature.title}</h3>
+										<p className="text-gray-400">{feature.desc}</p>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
-				</div>
+				</Parallax>
 
 				{/* Additional Banner - Process Section */}
 				<div 
