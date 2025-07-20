@@ -12,6 +12,11 @@ Dev team:
 * [Reid Moffat](https://github.com/reid-moffat): 2023 rework lead
 * [Yves Alikalfic](https://github.com/yves-a): 2023 rework developer
 
+2025 Redesign Dev Team
+* [Chloe Houvardas](https://github.com/ChloeHouvardas): Cochair 2025-2026
+* [Kayne Lee]:(https://github.com/kayne-lee) Director of Devs 2025-2026
+* [Simon Risk]:(https://github.com/SimonNRisk) Developer 2025-2026
+
 ## Running locally
 
 <i>This site is built with [Next.js](https://nextjs.org/) and hosted with [Vercel](https://vercel.com/)</i>
