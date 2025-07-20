@@ -1,5 +1,8 @@
+'use client'
 import { LinkBox } from "./LinkBox";
 import Image from "next/image";
+import React from "react"; // Added missing import for React
+import { Parallax } from 'react-scroll-parallax';
 
 type BannerProps = {
 	title: string;
@@ -8,50 +11,80 @@ type BannerProps = {
 	images?: string[];
 };
 
+function isClassNameElement(element: any): element is React.ReactElement<{ className?: string }> {
+	return element && typeof element === 'object' && 'props' in element && 'className' in element.props;
+}
+
 export function Banner({ title, message, linkBox, images = [] }: BannerProps) {
 	const renderImages = () => {
 		if (images.length === 2) {
 			return (
-				<div className="relative w-[280px] h-[340px]">
-					<Image
-						src={images[0]}
-						alt="top-right"
-						width={260}
-						height={260}
-						className="absolute top-0 right-0 rounded-lg shadow"
-					/>
-					<Image
-						src={images[1]}
-						alt="below-top-right"
-						width={240}
-						height={240}
-						className="absolute bottom-0 right-20 transform  rounded-lg shadow"
-					/>
+				<div className="relative w-[420px] h-[320px] flex items-end justify-end">
+					{/* Main image */}
+					<div className="relative z-10">
+						<Parallax
+						scale={[1.4, 1.2]}
+						opacity={[0.6, 1]}
+						easing="easeOutCubic"
+						shouldAlwaysCompleteAnimation
+						>
+						<Image
+							src={images[0]}
+							alt="main"
+							width={380}
+							height={260}
+							className="rounded-xl shadow-xl border-8 border-white object-cover"
+							style={{ objectFit: 'cover' }}
+						/>
+						</Parallax>
+
+
+					</div>
+					{/* Overlapping small image */}
+					<div className="absolute left-0 bottom-0 z-20">
+						<Parallax
+						scale={[1.1, 1]}
+						opacity={[0.8, 1]}
+						easing="easeOutCubic"
+						shouldAlwaysCompleteAnimation
+						>
+							<Image
+							src={images[1]}
+							alt="overlap"
+							width={170}
+							height={120}
+							className="rounded-xl shadow-lg border-8 border-white object-cover"
+							style={{ objectFit: 'cover' }}
+							/>
+						</Parallax>
+
+					</div>
 				</div>
 			);
 		} else if (images.length === 3) {
+			// Fallback to previous layout for 3 images
 			return (
 				<div className="relative w-[280px] h-[280px]">
 					<Image
-						src={images[2]} // nathan
+						src={images[2]}
 						alt="top"
 						width={170}
 						height={170}
-						className="absolute top-0 right-10 transform -translate-x-1/2 rounded-lg shadow"
+						className="absolute top-0 right-10 transform -translate-x-1/2 rounded-lg shadow-lg border-8 border-white"
 					/>
 					<Image
-						src={images[1]} // alison
+						src={images[1]}
 						alt="bottom-right"
 						width={90}
 						height={90}
-						className="absolute bottom-0 right-0 rounded-lg shadow"
+						className="absolute bottom-0 right-0 rounded-lg shadow-lg border-8 border-white"
 					/>
 					<Image
-						src={images[0]} // mahir
+						src={images[0]}
 						alt="left"
 						width={250}
 						height={250}
-						className="absolute bottom-0 right-40 rounded-lg shadow"
+						className="absolute bottom-0 right-40 rounded-lg shadow-lg border-8 border-white"
 					/>
 				</div>
 			);
@@ -60,18 +93,32 @@ export function Banner({ title, message, linkBox, images = [] }: BannerProps) {
 	};
 
 	return (
-		<div className="bg-blue-100 border-4 border-blue-600 rounded-3xl py-8 px-4 mx-16 sm:px-6 lg:px-8 mb-16">
-			<div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-				<div className="text-left max-w-[600px]">
-					<h1 className="text-blue-600 text-3xl sm:text-4xl mb-4">
-						{title}
-					</h1>
-					<p className="text-gray-400 text-lg sm:text-xl mb-6">
-						{message}
-					</p>
-					{linkBox}
+		<div className="relative overflow-hidden">
+			{/* Soft blue/purple gradient background */}
+			<div className="absolute inset-0 z-0 pointer-events-none" style={{background: "radial-gradient(ellipse at 60% 40%, #e3edfa 60%, #f3f4fa 100%)"}} />
+			{/* Optional blurred glow */}
+			<div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-[#b3cfff] opacity-30 rounded-full blur-3xl z-0" />
+			<div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-[#d1cfff] opacity-20 rounded-full blur-2xl z-0" />
+
+			<div className="relative z-10 bg-transparent py-20 px-4 sm:px-8 lg:px-16">
+				<div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 min-h-[400px]">
+					<div className="flex-1 text-left max-w-[540px]">
+						<div className="text-[#3576d3] text-base font-medium mb-2">What We Do</div>
+						<h1 className="text-[#3576d3] text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
+							{title}
+						</h1>
+						<p className="text-gray-400 text-lg sm:text-xl mb-8 leading-relaxed">
+							{message}
+						</p>
+						{/* Only clone if className is a valid prop */}
+						{React.isValidElement(linkBox) && isClassNameElement(linkBox)
+							? React.cloneElement(linkBox, { className: 'border-[#3576d3] text-[#3576d3] hover:bg-[#e3edfa] focus:ring-[#3576d3]' })
+							: linkBox}
+					</div>
+					<div className="flex-1 flex items-center justify-center">
+						{renderImages()}
+					</div>
 				</div>
-				{renderImages()}
 			</div>
 		</div>
 	);
