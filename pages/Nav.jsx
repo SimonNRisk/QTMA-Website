@@ -108,10 +108,12 @@ export default function Nav() {
 			</header>
 
 			{/* Mobile Hamburger */}
-			<div className={`${isTablet ? "block" : "hidden"}`}>
+			<div className={`${isTablet && !navOn ? "block" : "hidden"}`}>
 				<div
 					className="p-3 cursor-pointer hover:bg-gray-100 transition-colors fixed top-0 right-0 z-50"
-					onClick={() => setNavOn(!navOn)}
+					onClick={() => {
+						setNavOn(!navOn);
+					}}
 				>
 					<AiOutlineMenu size={24} className="text-gray-800" />
 				</div>
