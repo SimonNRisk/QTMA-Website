@@ -80,10 +80,7 @@ export default function Home() {
 					scrollY={scrollY}
 				/>
 
-				{/* NAVBAR */}
-				<section>
-					<Nav />
-				</section>
+				<Nav />
 
 				<section
 					id="home"
